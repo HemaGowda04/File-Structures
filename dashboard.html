@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hospital Management System</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Welcome, {{ user.name }}</h1>
+    <h2>Dashboard</h2>
+    {% if user.role == "doctor" %}
+    <h3>Your Patients:</h3>
+    <ul>
+        {% for patient in patients %}
+        <li>Name: {{ patient.name }}, Age: {{ patient.age }}</li>
+        {% endfor %}
+    </ul>
+    {% elif user.role == "patient" %}
+    <h3>Your Doctor:</h3>
+    <p>Name: {{ doctor.name }}</p>
+    <p>Specialization: {{ doctor.specialization }}</p>
+    {% endif %}
+    <form method="POST" action="/logout">
+        <input type="submit" value="Logout">
+    </form>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Patient Dashboard</title>
+</head>
+<body>
+    <h1>Welcome to {{ hospital_name }}</h1>
+    <h2>Patient Dashboard</h2>
+    <h3>Patient Details:</h3>
+    <p>ID: {{ patient['id'] }}</p>
+    <p>Name: {{ patient['name'] }}</p>
+    <p>Age: {{ patient['age'] }}</p>
+    <p>Gender: {{ patient['gender'] }}</p>
+    <h3>Doctor Details:</h3>
+    <p>Doctor ID: {{ doctor['id'] }}</p>
+    <p>Doctor Name: {{ doctor['name'] }}</p>
+    <p>Doctor Specialization: {{ doctor['specialization'] }}</p>
+    <h3>Appointment Time:</h3>
+    <p>{{ patient['appointment_time'] }}</p>
+    <form action="/patient_menu/{{ hospital_name }}" method="POST">
+        <input type="submit" value="Go Back">
+    </form>
+</body>
+</html>

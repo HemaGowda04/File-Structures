@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Patient Login</title>
+</head>
+<body>
+    <h1>Welcome to {{ hospital_name }}</h1>
+    <h2>Patient Login</h2>
+    <form action="/patient_login/{{ hospital_name }}" method="POST">
+        <label>ID:</label><br>
+        <input type="text" name="id"><br>
+        <label>Password:</label><br>
+        <input type="password" name="password"><br>
+        <input type="submit" value="Login">
+    </form>
+</body>
+</html>

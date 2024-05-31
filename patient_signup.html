@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Patient Sign Up</title>
+</head>
+<body>
+    <h1>Welcome to {{ hospital_name }}</h1>
+    <h2>Patient Sign Up</h2>
+    <form action="/patient_signup/{{ hospital_name }}" method="POST">
+        <label>Name:</label><br>
+        <input type="text" name="name"><br>
+        <label>Age:</label><br>
+        <input type="number" name="age"><br>
+        <label>Gender:</label><br>
+        <input type="text" name="gender"><br>
+        <label>Doctor:</label><br>
+        <select name="doctor_id">
+            {% for doctor in doctors %}
+            <option value="{{ doctor['id'] }}">{{ doctor['name'] }} - {{ doctor['specialization'] }}</option>
+            {% endfor %}
+        </select><br>
+        <label>Appointment Time:</label><br>
+        <input type="text" name="appointment_time"><br>
+        <label>Password:</label><br>
+        <input type="password" name="password"><br>
+        <input type="submit" value="Sign Up">
+    </form>
+</body>
+</html>

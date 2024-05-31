@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Patient Menu</title>
+</head>
+<body>
+    <h1>Welcome to {{ hospital_name }}</h1>
+    <h2>Patient Menu</h2>
+    <form action="/patient_menu/{{ hospital_name }}" method="POST">
+        <label>Choose an option:</label><br>
+        <input type="submit" name="choice" value="1">Patient Sign Up<br>
+        <input type="submit" name="choice" value="2">Patient Login<br>
+        <input type="submit" name="choice" value="3">Exit<br>
+    </form>
+</body>
+</html>

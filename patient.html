@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hospital Management System - {{ hospital_name }} - Patient</title>
+</head>
+<body>
+    <h1>{{ hospital_name }} - Patient</h1>
+    <h2>Menu</h2>
+    <form action="/patient_menu/{{ hospital_name }}" method="POST">
+        <input type="hidden" name="hospital_name" value="{{ hospital_name }}">
+        <label for="choice">Select an option:</label>
+        <select id="choice" name="choice">
+            <option value="1">Sign Up</option>
+            <option value="2">Login</option>
+            <option value="3">Go back</option>
+        </select>
+        <br><br>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
